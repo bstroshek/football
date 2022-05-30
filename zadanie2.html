@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            background: url("img/field.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 22px 73px;
+        }
+        main {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .ball {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            display: block;
+            background: url("img/ball.png") center/cover no-repeat;
+        }
+    </style>
+</head>
+<body>
+<!--Задание 2-->
+<!--Создать html-страницу с футбольным полем, которое-->
+<!--занимает всю ширину и высоту экрана, и мячом размером-->
+<!--100 на 100 пикселей. Сделать так, чтобы при клике мышкой-->
+<!--по полю, мяч плавно перемещался на место клика. Учтите:-->
+<!--необходимо, чтобы центр мяча останавливался именно там,-->
+<!--где был совершен клик мышкой. Также предусмотрите,-->
+<!--чтобы мяч не выходил за границы поля.-->
+
+
+<main onclick="moveBall(event)">
+    <div class="ball" id="js_ball" style="left: 629px; top: 265px; transition: all 500ms ease 0s;"></div>
+</main>
+
+<script>
+
+    function moveBall(e) {
+        js_ball.style.left = e.clientX - 50 + 'px';
+        js_ball.style.top = e.clientY - 40 +'px';
+        js_ball.style.transition = "500ms";
+    }
+
+</script>
+</body>
+</html>
